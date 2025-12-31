@@ -31,32 +31,45 @@ const ServiceCard = ({ index, title, icon }) => {
 const About = () => {
   return (
     <>
-      <motion.div variants={textVariant()}>
+       <motion.div variants={textVariant()}>
         <p className={styles.sectionSubText}>Overview</p>
         <h2 className={styles.sectionHeadText}>
           About <span className="text-cyan-400">Me</span>
         </h2>
       </motion.div>
 
-      <motion.p
-        variants={fadeIn("", "", 0.1, 1)}
-        className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
-      >
-        I’m a Prefinal-year B.Tech student at IIT (ISM) Dhanbad and a passionate
-        Software Engineer who enjoys building secure, scalable applications that
-        solve real-world problems. 
-        <br /> <br />
-        I specialize in Full-Stack Development, Cloud
-        Technologies, and security-aware system design, with hands-on experience
-        in building and deploying production-ready applications. I’m driven by
-        creating solutions that combine performance, scalability, and security
-        to deliver real impact. 
-        <br /> <br />
-        Outside of development, I actively engage in the
-        cybersecurity community — organizing CTF competitions, solving
-        competitive programming challenges, and continuously learning about
-        application security and system internals.
-      </motion.p>
+      <motion.div variants={fadeIn("", "", 0.1, 1)} className="mt-6 max-w-4xl">
+        <p className="text-secondary text-[16.5px] leading-[30px] tracking-wide">
+          I’m a{" "}
+          <span className="text-white font-medium">
+            Prefinal-year B.Tech student at IIT (ISM) Dhanbad
+          </span>{" "}
+          and a passionate Software Engineer who enjoys building secure,
+          scalable applications that solve real-world problems.
+        </p>
+
+        <p className="mt-5 text-secondary text-[16.5px] leading-[30px] tracking-wide">
+          I specialize in{" "}
+          <span className="text-cyan-400 font-medium">
+            Full-Stack Development
+          </span>
+          ,{" "}
+          <span className="text-cyan-400 font-medium">Cloud Technologies</span>,
+          and{" "}
+          <span className="text-cyan-400 font-medium">
+            security-aware system design
+          </span>
+          , with hands-on experience in building and deploying production-ready
+          applications.
+        </p>
+
+        <p className="mt-5 text-secondary text-[16.5px] leading-[30px] tracking-wide">
+          Outside of development, I actively engage in the cybersecurity
+          community — organizing CTF competitions, solving competitive
+          programming challenges, and continuously learning about application
+          security and system internals.
+        </p>
+      </motion.div>
 
       <div className="mt-20 flex flex-wrap gap-10">
         {services.map((service, index) => (

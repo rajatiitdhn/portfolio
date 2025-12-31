@@ -13,7 +13,6 @@ const Hero = ({ theme, setTheme }) => {
 
   return (
     <section className="relative w-full h-screen mx-auto overflow-hidden">
-
       {/* Animated background blobs */}
       <motion.div
         animate={{ scale: [1, 1.1, 1], opacity: [0.4, 0.6, 0.4] }}
@@ -27,8 +26,9 @@ const Hero = ({ theme, setTheme }) => {
       />
 
       {/* Content */}
-      <div className={`${styles.paddingX} relative z-10 max-w-7xl mx-auto flex flex-col justify-center h-full`}>
-
+      <div
+        className={`${styles.paddingX} relative z-10 max-w-7xl mx-auto flex flex-col justify-center h-full`}
+      >
         {/* Name */}
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
@@ -57,7 +57,8 @@ const Hero = ({ theme, setTheme }) => {
           transition={{ delay: 0.5 }}
           className={`${styles.heroSubText} mt-6 max-w-2xl`}
         >
-          I build scalable, secure, and high-performance web systems with modern technologies.
+          I build scalable, secure, and high-performance web systems with modern
+          technologies.
         </motion.p>
 
         {/* CTA buttons */}
@@ -83,19 +84,34 @@ const Hero = ({ theme, setTheme }) => {
           </a>
         </motion.div>
       </div>
-
-      {/* Scroll indicator */}
-     <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center">
+      {/* Floating explore button */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1 }}
+        className="absolute bottom-10 w-full flex justify-center"
+      >
         <a href="#about">
-          <div className="w-[30px] h-[50px] rounded-3xl border-4 border-cyan-400 flex justify-center items-start p-2 cursor-pointer">
-            <motion.div
-              animate={{ y: [0, 24, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-              className="w-2 h-2 rounded-full bg-cyan-400 mb-1"
-            />
-          </div>
+          <motion.div
+            whileHover={{ scale: 1.08 }}
+            whileTap={{ scale: 0.95 }}
+            className="flex items-center gap-3 px-6 py-3 rounded-full
+                 bg-white/5 backdrop-blur-md border border-white/10
+                 text-cyan-400 font-medium shadow-lg hover:border-cyan-400/50
+                 transition cursor-pointer"
+          >
+            <span className="text-sm tracking-wide">Explore my work</span>
+
+            <motion.span
+              animate={{ y: [0, 6, 0] }}
+              transition={{ duration: 1.4, repeat: Infinity }}
+              className="text-lg"
+            >
+              ↓
+            </motion.span>
+          </motion.div>
         </a>
-      </div>
+      </motion.div>
     </section>
   );
 };
