@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   Github,
   Linkedin,
@@ -34,6 +35,16 @@ const socials = [
 ];
 
 const Footer = () => {
+  const [showTopBtn, setShowTopBtn] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowTopBtn(window.scrollY > 400);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <footer className="relative mt-28 bg-black-100 overflow-hidden">
 
@@ -60,7 +71,7 @@ const Footer = () => {
             </h3>
 
             <p className="mt-2 text-secondary text-sm max-w-xs">
-              Full-Stack Developer • DevOps & Cloud Enthusiast
+              Software Engineer • DevOps & Cloud Enthusiast
             </p>
 
             {/* Status badge */}
@@ -107,16 +118,23 @@ const Footer = () => {
         </div>
       </motion.div>
 
-      {/* Back to top button */}
-      <motion.button
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.95 }}
-        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        className="fixed bottom-6 right-6 z-50 p-3 rounded-xl bg-cyan-500 text-black shadow-lg hover:bg-cyan-400 transition"
-        aria-label="Back to top"
-      >
-        <ArrowUp size={20} />
-      </motion.button>
+      {/* Back to top button - only shown when scrolled down */}
+      <AnimatePresence>
+        {showTopBtn && (
+          <motion.button
+            initial={{ opacity: 0, scale: 0.5, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.5, y: 20 }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="fixed bottom-6 right-6 z-50 p-3 rounded-xl bg-cyan-500 text-black shadow-lg hover:bg-cyan-400 transition cursor-pointer"
+            aria-label="Back to top"
+          >
+            <ArrowUp size={20} />
+          </motion.button>
+        )}
+      </AnimatePresence>
     </footer>
   );
 };

@@ -9,6 +9,7 @@ import Feedbacks from './Feedbacks';
 import Contact from './Contact';
 import CompetitiveProgramming from './CompetitiveProgramming';
 import Footer from './Footer';
+import Internship from './Internship';
 export {
   Hero,
   Navbar,
@@ -20,5 +21,6 @@ export {
   Contact,
   CompetitiveProgramming,
   Footer,
+  Internship,
   StarsCanvas,
 }

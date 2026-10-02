@@ -23,12 +23,17 @@ import {
   cryptalk,
   graphical,
   terminet,
+  accenture,
 } from "../assets";
 
 export const navLinks = [
   {
     id: "about",
     title: "About",
+  },
+  {
+    id: "internship",
+    title: "Internship",
   },
   {
     id: "projects",
@@ -85,23 +90,23 @@ const technologies = [
     icon: javascript,
   },
   {
-    name: "sql",
+    name: "SQL",
     icon: sql,
   },
   {
-    name: "React JS",
+    name: "React.js",
     icon: reactjs,
   },
   {
-    name: "aws",
+    name: "AWS",
     icon: aws,
   },
   {
-    name: "linux",
+    name: "Linux",
     icon: linux,
   },
   {
-    name: "Node JS",
+    name: "Node.js",
     icon: nodejs,
   },
   {
@@ -109,18 +114,18 @@ const technologies = [
     icon: mongodb,
   },
   {
-    name: "C",
+    name: "C++",
     icon: c,
   },
   {
-    name: "git",
+    name: "Git",
     icon: git,
   },
   {
-    name: "docker",
+    name: "Docker",
     icon: docker,
   },
-  { name: "kubernetes", icon: kubernetes },
+  { name: "Kubernetes", icon: kubernetes },
 ];
 
 const experiences = [
@@ -171,7 +176,7 @@ const experiences = [
     iconBg: "#E6DEDD",
     date: "Dec 2023 - Jan 2024",
     points: [
-      "Won the Winter of Code 5.0 hackathon hosted by Cyberlabs, competing among 700+ participants."
+      "Won the Winter of Code 6.0 hackathon hosted by Cyberlabs, competing among 700+ participants."
     ],
   },
 ];
@@ -207,7 +212,7 @@ const projects = [
   {
     name: "Terminet",
     description:
-      " a secure web-based shell interface using isolated Kubernetes pods, supporting 100+ concurrent users for real-time Linux command execution and on-demand pod creation per user with enforced resource quotas and automatic teardown.",
+      "A secure web-based shell interface using isolated Kubernetes pods, supporting 100+ concurrent users for real-time Linux command execution and on-demand pod creation per user with enforced resource quotas and automatic teardown.",
     tags: [
       {
         name: "Flask",
@@ -222,7 +227,7 @@ const projects = [
         color: "pink-text-gradient",
       },
       {
-        name: "Mysql",
+        name: "MySQL",
         color: "blue-text-gradient",
       },
     ],
@@ -232,7 +237,7 @@ const projects = [
   {
     name: "Cryptalk",
     description:
-      "a real-time chat application supporting 1-on-1 and group conversations with a seamless and responsive user experience across devices, featuring end-to-end encryption for secure messaging.",
+      "A real-time chat application supporting 1-on-1 and group conversations with a seamless and responsive user experience across devices, featuring end-to-end encryption for secure messaging.",
     tags: [
       {
         name: "React",
@@ -261,18 +266,18 @@ const projects = [
   {
     name: "Graphical Password Authenticator",
     description:
-      "a secure and user-friendly graphical password authentication system to enhance traditional text-based password security.",
+      "A secure and user-friendly graphical password authentication system to enhance traditional text-based password security.",
     tags: [
       {
-        name: "html",
+        name: "HTML5",
         color: "blue-text-gradient",
       },
       {
-        name: "firebase",
+        name: "Firebase",
         color: "green-text-gradient",
       },
       {
-        name: "javascript",
+        name: "JavaScript",
         color: "pink-text-gradient",
       },
     ],
@@ -319,4 +324,21 @@ const competitiveProfiles = [
 ];
 
 
-export { services, technologies, experiences, testimonials, projects, competitiveProfiles };
+const internships = [
+  {
+    title: "Software Engineer Intern (AEH)",
+    company_name: "Accenture",
+    icon: accenture,
+    iconBg: "#000000",
+    date: "May 2026 – July 2026",
+    location: "Bengaluru, India",
+    techStack: ["PySpark", "Databricks", "SQL", "Azure", "Delta Lake"],
+    points: [
+      "Built scalable ETL pipelines using PySpark, Databricks, SQL, and Azure, processing 10M+ records while optimizing Spark transformations, partitioning, and joins to reduce end-to-end pipeline execution time by 35%.",
+      "Designed and implemented the Medallion Architecture (Bronze, Silver, Gold) using Delta Lake, improving data quality by 30% and delivering reliable, analytics-ready datasets for downstream reporting and business intelligence.",
+      "Architected optimized SQL queries and reusable PySpark workflows for data cleansing, validation, and aggregation, enabling 10+ business dashboards with 99.9% data accuracy while following production-grade data engineering best practices.",
+    ],
+  },
+];
+
+export { services, technologies, experiences, testimonials, projects, competitiveProfiles, internships };

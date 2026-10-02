@@ -30,6 +30,7 @@ import cp from "./company/cp.png";
 import pearl from "./company/pearl.png";
 import trophy from "./company/trophy.png";
 import coding from "./company/coding.png";
+import accenture from "./company/accenture.svg";
   
 import cryptalk from "./cryptalk.png";
 import graphical from "./graphical.png";
@@ -66,6 +67,7 @@ export {
   pearl,
   trophy,
   coding,
+  accenture,
   cryptalk,
   graphical,
   terminet
